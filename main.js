@@ -5,6 +5,6 @@ async function start() {
     const weatherData = await weatherPromise.json()
     const miamiTemperature = weatherData.properties.periods[0].temperature
 
-    document.querySelector("#temperature-output").textContent = miamiTemperature
+    document.querySelector("#temperature").textContent = miamiTemperature
 }
 
