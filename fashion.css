@@ -185,6 +185,17 @@ body {
     font-family: "Source Sans 3", sans-serif;
     font-size: 1.15rem;
     color: #9F9F9F;
+    cursor: pointer;
+}
+
+.pet-options .active,
+.pet-options .active:hover {
+    color: #475AFF;
+    text-decoration: underline;
+}
+
+.pet-options button:hover {
+    color: #7d7d7d;
 }
 
 .site-footer {

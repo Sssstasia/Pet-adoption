@@ -23,6 +23,7 @@ async function petsArea() {
         clone.querySelector("h3").textContent = pet.name
         clone.querySelector(".pet-description").textContent = pet.description
         clone.querySelector(".pet-age").textContent = calculateAge(pet.birthYear)
+        if (!pet.photo) pet.photo = "images/fallback.jpg"
         clone.querySelector(".pet-card-photo img").src = pet.photo
         clone.querySelector(".pet-card-photo img").alt = ` A ${pet.species} named ${pet.name}.`
         wrapper.appendChild(clone)
@@ -43,3 +44,14 @@ function calculateAge(birthYear) {
 
 }
 
+//pet-options buttons
+
+const allButtons = document.querySelectorAll(".pet-options button")
+allButtons.forEach(el => {
+    el.addEventListener("click", handleButtonClick)
+})
+
+function handleButtonClick(event) {
+    allButtons.forEach(el => el.classList.remove("active"))
+    event.target.classList.add("active")
+}
